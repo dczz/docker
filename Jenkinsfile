@@ -19,7 +19,7 @@ pipeline{
         echo "send to docker server"
       }
     }
-    stage("Send") {
+    stage("Compose") {
       steps{
         echo "ssh server exec docker-compose"
       }
