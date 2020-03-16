@@ -1,0 +1,5 @@
+git clone this
+mvn package
+push to docker server
+docker-compose up
+docker-compose restart containers
