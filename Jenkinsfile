@@ -6,10 +6,11 @@ pipeline{
       }
     }
     stage("Build") {
-      steps{
-        mvn clean package -DskipTests
+      withMaven(options: [findbugsPublisher(), junitPublisher(ignoreAttachments: false)]) {
+        sh 'mvn clean findbugs:findbugs package'
       }
     }
+
     stage("Send") {
       steps{
         echo "send to docker server"
