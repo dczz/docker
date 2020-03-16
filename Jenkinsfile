@@ -6,9 +6,11 @@ pipeline{
       }
     }
     stage("Build") {
-      withMaven(options: [findbugsPublisher(), junitPublisher(ignoreAttachments: false)]) {
-        sh 'mvn clean findbugs:findbugs package'
-      }
+      steps{
+        withMaven(options: [findbugsPublisher(), junitPublisher(ignoreAttachments: false)]) {
+                sh 'mvn clean findbugs:findbugs package'
+              }
+       }
     }
 
     stage("Send") {
