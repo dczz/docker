@@ -12,14 +12,14 @@ pipeline{
       }
     }
 
-    stage("Send") {
+    stage("Connect Docker Server") {
       steps{
-        echo "send to docker server"
+
       }
     }
-    stage("Compose") {
+    stage("Publisher") {
       steps{
-        echo "ssh server exec docker-compose"
+
       }
     }
   }
