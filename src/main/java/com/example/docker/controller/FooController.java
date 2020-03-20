@@ -21,6 +21,11 @@ public class FooController {
         return fooRepository.findAll().stream().findFirst().orElseThrow(RuntimeException::new);
     }
 
+    @RequestMapping("hello")
+    public String say() {
+        return "hello world";
+    }
+
     @EventListener(ApplicationReadyEvent.class)
     public void on() {
         Foo foo = new Foo();

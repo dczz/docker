@@ -18,6 +18,10 @@ public class Foo implements Serializable {
     public Foo() {
     }
 
+    public Foo(String name) {
+        this.name = name;
+    }
+
     public Long getId() {
         return id;
     }
